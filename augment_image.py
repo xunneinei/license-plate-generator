@@ -37,11 +37,16 @@ class ImageAugmentation(object):
             raise ValueError('暂时不支持该类型车牌')
         self.template_image = template_image
         # 透视变换
-        self.angle_horizontal = 15
-        self.angle_vertical = 15
-        self.angle_up_down = 10
-        self.angle_left_right = 5
-        self.factor = 10
+        # self.angle_horizontal = 15
+        # self.angle_vertical = 15
+        # self.angle_up_down = 10
+        # self.angle_left_right = 5
+        # self.factor = 10        
+        self.angle_horizontal = 0
+        self.angle_vertical = 0
+        self.angle_up_down = 0
+        self.angle_left_right = 0
+        self.factor = 0
         # 色调，饱和度，亮度
         self.hue_keep = 0.8
         self.saturation_keep = 0.3

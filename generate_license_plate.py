@@ -24,7 +24,7 @@ from augment_image import ImageAugmentation
 class LicensePlateGenerator(object):
     
     @staticmethod
-    def generate_license_plate_images(plate_type, batch_size, save_path, shift_index=0):
+    def generate_license_plate_images(plate_type, batch_size, save_path, shift_index=0, platenumstr=None):
         """ 生成特定数量的、指定车牌类型的车牌图片，并保存到指定目录下
         :param plate_type: 车牌类型
         :param batch_size: 车牌号数量
@@ -36,7 +36,9 @@ class LicensePlateGenerator(object):
         sys.stdout.flush()
         # 生成车牌号
         license_plate_no_generator = LicensePlateNoGenerator(plate_type)
-        plate_nums = license_plate_no_generator.generate_license_plate_numbers(batch_size)
+        # 随机生成车牌号
+        # plate_nums = license_plate_no_generator.generate_license_plate_numbers(batch_size)
+        plate_nums=[platenumstr]
         # 生成车牌号图片：白底黑字
         chars_image_generator = CharsImageGenerator(plate_type)
         chars_images = chars_image_generator.generate_images(plate_nums)
@@ -66,15 +68,15 @@ class LicensePlateGenerator(object):
                 sys.stdout.flush()
         return
     
-    
 if __name__ == '__main__':
     plate_height = 72
+    platenumstr='粤M476Q1'
     # 每个颜色的生成
-    blue_batch_size = 1400
-    yellow_batch_size = 300
-    new_energy_batch_size = 300
+    blue_batch_size = 1
+    yellow_batch_size = 1
+    new_energy_batch_size = 1
     # 迭代次数
-    iter_times = 10000
+    iter_times = 1
     # 保存文件夹名称
     file_path = os.path.join(os.getcwd(), 'plate_images')
     start_index = 0
@@ -87,17 +89,17 @@ if __name__ == '__main__':
         LicensePlateGenerator.generate_license_plate_images('single_blue',
                                                             batch_size=blue_batch_size,
                                                             save_path=file_path,
-                                                            shift_index=start_index)
+                                                            shift_index=start_index,platenumstr=platenumstr)
         start_index += blue_batch_size
         LicensePlateGenerator.generate_license_plate_images('single_yellow',
                                                             batch_size=yellow_batch_size,
                                                             save_path=file_path,
-                                                            shift_index=start_index)
+                                                            shift_index=start_index,platenumstr=platenumstr)
         start_index += yellow_batch_size
         LicensePlateGenerator.generate_license_plate_images('small_new_energy',
                                                             batch_size=new_energy_batch_size,
                                                             save_path=file_path,
-                                                            shift_index=start_index)
+                                                            shift_index=start_index,platenumstr=platenumstr)
         start_index += new_energy_batch_size
     sys.stdout.write('\r{}: done...\n'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), iter_times))
     sys.stdout.flush()
