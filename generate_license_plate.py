@@ -37,8 +37,8 @@ class LicensePlateGenerator(object):
         # 生成车牌号
         license_plate_no_generator = LicensePlateNoGenerator(plate_type)
         # 随机生成车牌号
-        # plate_nums = license_plate_no_generator.generate_license_plate_numbers(batch_size)
-        plate_nums=[platenumstr]
+        plate_nums = license_plate_no_generator.generate_license_plate_numbers(batch_size)
+        # plate_nums=[platenumstr]
         # 生成车牌号图片：白底黑字
         chars_image_generator = CharsImageGenerator(plate_type)
         chars_images = chars_image_generator.generate_images(plate_nums)
@@ -70,13 +70,14 @@ class LicensePlateGenerator(object):
     
 if __name__ == '__main__':
     plate_height = 72
-    platenumstr='粤M476Q1'
+    platenumstr='粤M579M2'
+    # platenumstr='粤ELK567'
     # 每个颜色的生成
     blue_batch_size = 1
     yellow_batch_size = 1
     new_energy_batch_size = 1
     # 迭代次数
-    iter_times = 1
+    iter_times = 500
     # 保存文件夹名称
     file_path = os.path.join(os.getcwd(), 'plate_images')
     start_index = 0

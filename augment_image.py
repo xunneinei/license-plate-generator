@@ -48,13 +48,17 @@ class ImageAugmentation(object):
         self.angle_left_right = 0
         self.factor = 0
         # 色调，饱和度，亮度
-        self.hue_keep = 0.8
-        self.saturation_keep = 0.3
-        self.value_keep = 0.2
+        # self.hue_keep = 0.8
+        # self.saturation_keep = 0.3
+        # self.value_keep = 0.2
+        self.hue_keep = 0.9
+        self.saturation_keep = 0.8
+        self.value_keep = 0.7
         # 自然环境照片的路径列表
         self.env_data_paths = ImageAugmentation.search_file("background")
         # 高斯噪声level
-        self.level = 1 + ImageAugmentation.rand_reduce(4)
+        # self.level = 1 + ImageAugmentation.rand_reduce(4)
+        self.level = 1
         # 污渍
         self.smu = cv2.imread("images/smu.jpg")
     
