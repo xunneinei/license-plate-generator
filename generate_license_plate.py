@@ -71,13 +71,14 @@ class LicensePlateGenerator(object):
 if __name__ == '__main__':
     plate_height = 72
     platenumstr='粤M579M2'
+    # platenumstr='粤M476Q1'
     # platenumstr='粤ELK567'
     # 每个颜色的生成
     blue_batch_size = 1
     yellow_batch_size = 1
     new_energy_batch_size = 1
     # 迭代次数
-    iter_times = 500
+    iter_times = 2000
     # 保存文件夹名称
     file_path = os.path.join(os.getcwd(), 'plate_images')
     start_index = 0
