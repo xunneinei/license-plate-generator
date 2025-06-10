@@ -58,7 +58,8 @@ class LicensePlateGenerator(object):
         global plate_height
         plate_width = int(chars_image_generator.plate_width * plate_height / chars_image_generator.plate_height)
         for index, char_image in enumerate(chars_images):
-            image_name = str(shift_index + index).zfill(prefix_len) + '_' + plate_nums[index] + '.jpg'
+            # image_name = str(shift_index + index).zfill(prefix_len) + '_' + plate_nums[index] + '.jpg'
+            image_name = plate_nums[index][1:] + '.jpg'
             image_path = os.path.join(save_path, image_name)
             image = augmentation.augment(char_image)
             image = cv2.resize(image, (plate_width, plate_height))

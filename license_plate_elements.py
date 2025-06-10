@@ -23,7 +23,7 @@ class LicensePlateElements(object):
     #     u"桂": 20, u"琼": 21, u"川": 22, u"贵": 23, u"云": 24, u"藏": 25, u"陕": 26, u"甘": 27, u"青": 28, u"宁": 29,
     #     u"新": 30, u"军": 31, u"使": 32,
     # }
-    char1_enum = {u"粤": 0,
+    char1_enum = {u"晋": 0,
     }
     
     # 车牌第2位字符的取值范围及其label
