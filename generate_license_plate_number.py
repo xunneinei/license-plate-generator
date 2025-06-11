@@ -16,7 +16,8 @@ class LicensePlateNoGenerator(object):
     numerals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
                 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-                'U', 'V', 'W', 'X', 'Y', 'Z']
+                'U', 'V', 'W', 'X', 'Y', 'Z']   
+
     
     def __init__(self, plate_type):
         """ 初始化随机生成的比例，用于后续的随机生成方法中
