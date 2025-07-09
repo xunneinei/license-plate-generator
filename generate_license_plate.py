@@ -99,10 +99,10 @@ if __name__ == '__main__':
         #                                                     save_path=file_path,
         #                                                     shift_index=start_index,platenumstr=platenumstr)
         # start_index += yellow_batch_size
-        # LicensePlateGenerator.generate_license_plate_images('small_new_energy',
-        #                                                     batch_size=new_energy_batch_size,
-        #                                                     save_path=file_path,
-        #                                                     shift_index=start_index,platenumstr=platenumstr)
-        # start_index += new_energy_batch_size
+        LicensePlateGenerator.generate_license_plate_images('small_new_energy',
+                                                            batch_size=new_energy_batch_size,
+                                                            save_path=file_path,
+                                                            shift_index=start_index,platenumstr=platenumstr)
+        start_index += new_energy_batch_size
     sys.stdout.write('\r{}: done...\n'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), iter_times))
     sys.stdout.flush()
